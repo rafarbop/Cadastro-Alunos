@@ -1,0 +1,97 @@
+:root{
+    font-size: 14pt;
+}
+html,body{
+    margin: 0;
+    padding: 2vh 1vw 0vh 1vw;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
+    color: #002244;
+}
+
+/*estilo do cabeçalho e menu*/
+header{
+    background-color: #6699ee;
+    text-align: center;
+    padding: 2vh 2vw 0vh 2vw;
+    border-radius: 5vh 5vh 0 0;
+}
+header>h1{
+    color: #f8f8f8;
+    text-shadow: 0 0 10px #00000088;
+}
+nav#container-nav{
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+}
+.item-nav{
+    background-color: #aaccee;
+    padding: 2vh 1vw 1vh 1vw;
+    border-radius: 5vh 5vh 0 0;
+    flex-grow: 1;
+    margin: 0 1vw;
+    color: inherit;
+    text-decoration: none;
+}
+.item-nav:hover{
+    box-shadow: 0 -1px 4px black;      
+}
+
+/*estilo das section principais do site*/
+.conteudo-geral{
+    padding: 1vh 1vw;
+    margin: 4vh 0 4vh 0;
+    background-color: #6699ee;
+    min-height: 26vw;
+}
+.conteudo-geral>h2{
+    text-align: center;
+}
+.conteudo-principal{
+    padding: 1vh 2vw;
+    line-height: 2;
+    font-size: 1rem;
+    text-align: justify;
+}
+#novo-cadastro{
+    display: none;
+}
+#lista-cadastro{
+    display: none;
+}
+
+
+#container-form-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+}
+#container-form-cadastro>.item-form{
+    margin: 3vh 0 2vh 0;
+    display: flex;
+    justify-content: space-between;
+    min-width: 35%;
+}
+#enviar-dados{
+    margin: 4vh 2vw;
+    padding: 1vh 1vw;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: inherit;
+    background-color: #aaccee;
+    border-radius: 2vh;
+}
+#enviar-dados:focus{
+    outline: none;
+}
+
+
+
+
+footer#footer{
+    text-align: center;
+    border-top: 4px solid #6699ee;
+    border-radius: 50%;
+    padding-top: 2vh;
+}

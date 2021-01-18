@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Cadastro de Alunos</h1>
+        <nav id="container-nav">
+            <a id="nav-home" class="item-nav">Home</a>
+            <a id="nav-novo-cadastro" class="item-nav">Cadastrar Novo Aluno</a>
+            <a id="nav-lista-cadastro" class="item-nav">Lista de Alunos</a>
+        </nav>
+    </header>
+    <div id="home" class="conteudo-geral">
+        <h2>Home</h2>
+        <div class="conteudo-principal">
+            <p>Esse site é um sistema de cadastro e consulta de alunos de uma escola, podendo serem cadastrados todos os alunos que a escola possui para um controle da quantidade, da mesanlidade que cada um paga - sendo indicado se o aluno paga a mensalidade normal ou com algum desconto e de diversas informações referente aos alunos.</p>
+            <p>Com esse controle de forma online, a escola pode melhor gerenciar seus recursos para melhor atender a todos os alunos.</p>
+        </div>
+    </div>
+    <div id="novo-cadastro" class="conteudo-geral">
+        <h2>Cadastro de Novo Aluno</h2>
+        <form id="container-form-cadastro">
+            <div class="item-form">
+                <label for="nome-aluno">Nome do Aluno:</label>
+                <input id="nome-aluno" type="text">
+            </div>
+            <div class="item-form">
+                <label for="nasc-aluno">Data de Nascimento:</label>
+                <input id="nasc-aluno" type="text">
+            </div>
+            <div class="item-form">
+                <label for="ano-aluno">Ano Escolar:</label>
+                <input id="ano-aluno" type="text">
+            </div>
+            <div class="item-form">
+                <span>Aluno Possui Bolsa:</span>
+                <input id="bolsa-aluno-sim" type="radio" name="bolsa-aluno">
+                <label for="bolsa-aluno-sim">SIM</label>
+                <input id="bolsa-aluno-nao" type="radio" name="bolsa-aluno" checked>
+                <label for="bolsa-aluno-nao">NÃO</label>
+            </div>
+
+            <input id="enviar-dados" type="button" value="CADASTRAR">
+
+            
+            
+        </form>
+    </div>
+    <div id="lista-cadastro" class="conteudo-geral">
+        <h2>Alunos Cadastrados</h2>
+    </div>
+    
+
+    <footer id="footer">
+        <spam>&#9825; &#169; Escola do Estudo e Apredizagem &#9825;</spam>
+    </footer>
+
+   <script src="./js/javascript.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/7.23.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/7.23.0/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+</body>
+</html>
