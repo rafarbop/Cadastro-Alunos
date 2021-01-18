@@ -1,0 +1,7 @@
+17:03:12.353 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+17:03:12.482 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+17:03:55.301 [Thread-1] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+17:03:55.309 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: rafabruno-cadastro-de-alunos
+17:03:55.316 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - Stopping namespace actor for rafabruno-cadastro-de-alunos
+17:03:55.316 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - Gauges removed for rafabruno-cadastro-de-alunos
+17:03:55.321 [Thread-1] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
