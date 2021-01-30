@@ -61,7 +61,7 @@ nav#container-nav{
 }
 
 
-#container-form-cadastro{
+#container-form-cadastro,#container-form-view{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,6 +72,26 @@ nav#container-nav{
     display: flex;
     justify-content: space-between;
     min-width: 35%;
+}
+#container-form-view>.item-form-view{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    align-items: center;
+}
+.item-form-view>input{
+    background-color: #ccccdd;
+    border-color: #00000088;
+    border-radius: 1.2vh;
+    text-align: center;
+    width: 13vw;
+    font-size: 0.9rem;
+    padding: 0.2vh 0.3vw;
+}
+.item-form-view>input:nth-child(4){
+    width: 20vw;
+    text-align: left;
 }
 #enviar-dados{
     margin: 4vh 2vw;

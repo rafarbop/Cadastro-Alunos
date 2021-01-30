@@ -26,6 +26,10 @@
         <h2>Cadastro de Novo Aluno</h2>
         <form id="container-form-cadastro">
             <div class="item-form">
+                <label for="matricula-aluno">Matricula do Aluno:</label>
+                <input id="matricula-aluno" type="number" minlength="4" maxlength="6">
+            </div>
+            <div class="item-form">
                 <label for="nome-aluno">Nome do Aluno:</label>
                 <input id="nome-aluno" type="text">
             </div>
@@ -53,6 +57,18 @@
     </div>
     <div id="lista-cadastro" class="conteudo-geral">
         <h2>Alunos Cadastrados</h2>
+        <form id="container-form-view">
+            <div class="item-form-view">
+                <label for="matricula0">Matricula</label>
+                <input type="text" name="matricula0" id="matricula0" readonly>
+                <label for="nome1">Nome</label>
+                <input type="text" name="nome1" id="nome1" readonly>
+                <label for="nasc1">Nascimento</label>
+                <input type="date" name="nasc1" id="nasc1" readonly>
+                <label for="anoescola1">Ano Escolar</label>
+                <input type="text" name="anoescola1" id="anoescola1" readonly>
+            </div>
+        </form>
     </div>
     
 
@@ -63,12 +79,31 @@
    <script src="./js/javascript.js"></script>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <script src="/__/firebase/8.2.3/firebase-app.js"></script>
 
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="/__/firebase/7.23.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.3/firebase-analytics.js"></script>
 
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
+
+    <script>
+        var database = firebase.database();
+
+        var aluno = firebase.database().ref('/Pessoas/1111').once('value').then((snapshot)=> {
+            var nomealuno1 = snapshot.val().nomeAluno
+            document.getElementById('nome1').value = nomealuno1
+        })
+
+        function writeNewStudent(matricula,name,date,year,bolsa){
+            firebase.database().ref('Pessoas/'+matricula).set({
+                nomeAluno: name,
+                nascimento: date,
+                anoEscolar: year,
+                bolsaMensalidade: bolsa
+            });
+        }
+
+    </script>
 </body>
 </html>
