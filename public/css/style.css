@@ -61,7 +61,7 @@ nav#container-nav{
 }
 
 
-#container-form-cadastro,#container-form-view{
+#container-form-cadastro{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,26 +73,22 @@ nav#container-nav{
     justify-content: space-between;
     min-width: 35%;
 }
-#container-form-view>.item-form-view{
-    display: flex;
-    justify-content: space-between;
+table#container-table-view{
     width: 100%;
     font-size: 0.9rem;
-    align-items: center;
+    box-shadow: 0 0 6px black;
+    border-collapse: collapse;
+    background-color: #aaccee;
 }
-.item-form-view>input{
-    background-color: #ccccdd;
-    border-color: #00000088;
-    border-radius: 1.2vh;
-    text-align: center;
-    width: 13vw;
-    font-size: 0.9rem;
-    padding: 0.2vh 0.3vw;
+table#container-table-view td,th{
+    border: 2px solid black;
+    padding: 1vh 1vw;
 }
-.item-form-view>input:nth-child(4){
-    width: 20vw;
-    text-align: left;
+table#container-table-view th{
+    background-color: #22446688;
+    color: #f8f8f8;
 }
+
 #enviar-dados{
     margin: 4vh 2vw;
     padding: 1vh 1vw;

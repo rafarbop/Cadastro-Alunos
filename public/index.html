@@ -18,7 +18,7 @@
     <div id="home" class="conteudo-geral">
         <h2>Home</h2>
         <div class="conteudo-principal">
-            <p>Esse site é um sistema de cadastro e consulta de alunos de uma escola, podendo serem cadastrados todos os alunos que a escola possui para um controle da quantidade, da mesanlidade que cada um paga - sendo indicado se o aluno paga a mensalidade normal ou com algum desconto e de diversas informações referente aos alunos.</p>
+            <p>Esse site é um sistema de cadastro e consulta de alunos de uma escola, podendo serem cadastrados todos os alunos que a escola possui para um controle da quantidade, da mensalidade que cada um paga - sendo indicado se o aluno paga a mensalidade normal ou com algum desconto e de diversas informações referente aos alunos.</p>
             <p>Com esse controle de forma online, a escola pode melhor gerenciar seus recursos para melhor atender a todos os alunos.</p>
         </div>
     </div>
@@ -27,7 +27,7 @@
         <form id="container-form-cadastro">
             <div class="item-form">
                 <label for="matricula-aluno">Matricula do Aluno:</label>
-                <input id="matricula-aluno" type="number" minlength="4" maxlength="6">
+                <input id="matricula-aluno" type="number">
             </div>
             <div class="item-form">
                 <label for="nome-aluno">Nome do Aluno:</label>
@@ -35,11 +35,24 @@
             </div>
             <div class="item-form">
                 <label for="nasc-aluno">Data de Nascimento:</label>
-                <input id="nasc-aluno" type="text">
+                <input id="nasc-aluno" type="date">
             </div>
             <div class="item-form">
                 <label for="ano-aluno">Ano Escolar:</label>
-                <input id="ano-aluno" type="text">
+                <se.lect id="ano-aluno" name="ano-aluno">
+                    <option value="1º Fund">1º Fund</option>
+                    <option value="2º Fund">2º Fund</option>
+                    <option value="3º Fund">3º Fund</option>
+                    <option value="4º Fund">4º Fund</option>
+                    <option value="5º Fund">5º Fund</option>
+                    <option value="6º Fund">6º Fund</option>
+                    <option value="7º Fund">7º Fund</option>
+                    <option value="8º Fund">8º Fund</option>
+                    <option value="9º Fund">9º Fund</option>
+                    <option value="1º Med">1º Med</option>
+                    <option value="2º Med">2º Med</option>
+                    <option value="3º Med">3º Med</option>
+                </se.lect>
             </div>
             <div class="item-form">
                 <span>Aluno Possui Bolsa:</span>
@@ -57,19 +70,19 @@
     </div>
     <div id="lista-cadastro" class="conteudo-geral">
         <h2>Alunos Cadastrados</h2>
-        <form id="container-form-view">
-            <div class="item-form-view">
-                <label for="matricula0">Matricula</label>
-                <input type="text" name="matricula0" id="matricula0" readonly>
-                <label for="nome1">Nome</label>
-                <input type="text" name="nome1" id="nome1" readonly>
-                <label for="nasc1">Nascimento</label>
-                <input type="date" name="nasc1" id="nasc1" readonly>
-                <label for="anoescola1">Ano Escolar</label>
-                <input type="text" name="anoescola1" id="anoescola1" readonly>
-            </div>
-            <h5 id="snap"></h5>
-        </form>
+        <table id="container-table-view">
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome do Aluno</th>
+                    <th>Data de Nascimento</th>
+                    <th>Ano Escolar</th>
+                    <th>Possui Bolsa</th>
+                </tr>
+            </thead>
+            <tbody id="table-body-0"></tbody>
+            
+        </table>
     </div>
     
 
@@ -95,14 +108,40 @@
     <script>
         var database = firebase.database();
 
-        var aluno = firebase.database().ref('/Pessoas/1111').once('value').then((snapshot)=> {
-            var nomealuno1 = snapshot.val()
-            document.getElementById('matricula0').value = snapshot.key
-            document.getElementById('nome1').value = nomealuno1['nomeAluno']
-            document.getElementById('nasc1').value = nomealuno1['nascimento']
-            document.getElementById('anoescola1').value = nomealuno1['anoEscolar']
-            console.log(nomealuno1)
+        var bodyTabela = document.getElementById('table-body-0')
+        var aluno = firebase.database().ref('/Pessoas/').once('value').then((snapshot)=> {
+            
+            snapshot.forEach((childSnapshot)=>{
+                var bolsaMensalidade
+                if (childSnapshot.val().bolsaMensalidade == "true"){
+                    bolsaMensalidade = 'SIM'
+                }
+                else{
+                    bolsaMensalidade = 'NÃO'
+                }
+    
+                var linhaTabela = document.createElement('tr');
+                linhaTabela.innerHTML = `
+                <td>${childSnapshot.key}</td>
+                <td>${childSnapshot.val().nomeAluno}</td>
+                <td>${childSnapshot.val().nascimento}</td>
+                <td>${childSnapshot.val().anoEscolar}</td>
+                <td>${bolsaMensalidade}</td>
+                `
+                bodyTabela.appendChild(linhaTabela)
+            })
+            
         })
+
+
+        document.getElementById('enviar-dados').onclick = () => {
+            matricula = document.getElementById('matricula-aluno').value
+            name = document.getElementById('nome-aluno').value
+            date = document.getElementById('nasc-aluno').value
+            year = document.getElementById('ano-aluno').value
+            bolsa = false
+            writeNewStudent(matricula,name,date,year,bolsa)
+        }
 
         function writeNewStudent(matricula,name,date,year,bolsa){
             firebase.database().ref('Pessoas/'+matricula).set({
