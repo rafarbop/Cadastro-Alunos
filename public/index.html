@@ -68,6 +68,7 @@
                 <label for="anoescola1">Ano Escolar</label>
                 <input type="text" name="anoescola1" id="anoescola1" readonly>
             </div>
+            <h5 id="snap"></h5>
         </form>
     </div>
     
@@ -95,8 +96,12 @@
         var database = firebase.database();
 
         var aluno = firebase.database().ref('/Pessoas/1111').once('value').then((snapshot)=> {
-            var nomealuno1 = snapshot.val().nomeAluno
-            document.getElementById('nome1').value = nomealuno1
+            var nomealuno1 = snapshot.val()
+            document.getElementById('matricula0').value = snapshot.key
+            document.getElementById('nome1').value = nomealuno1['nomeAluno']
+            document.getElementById('nasc1').value = nomealuno1['nascimento']
+            document.getElementById('anoescola1').value = nomealuno1['anoEscolar']
+            console.log(nomealuno1)
         })
 
         function writeNewStudent(matricula,name,date,year,bolsa){
