@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Alunos</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Sistema de Cadastro de Alunos</h1>
-        <nav id="container-nav">
-            <a id="nav-home" class="item-nav">Home</a>
-            <a id="nav-novo-cadastro" class="item-nav">Cadastrar Novo Aluno</a>
-            <a id="nav-lista-cadastro" class="item-nav">Lista de Alunos</a>
-        </nav>
+      <h1>Sistema de Cadastro de Alunos</h1>
+      <nav id="container-nav">
+        <a id="nav-home" class="item-nav">Home</a>
+        <a id="nav-novo-cadastro" class="item-nav">Cadastrar Novo Aluno</a>
+        <a id="nav-lista-cadastro" class="item-nav">Lista de Alunos</a>
+      </nav>
     </header>
     <div id="home" class="conteudo-geral">
-        <h2>Home</h2>
-        <div class="conteudo-principal">
-            <p>Esse site é um sistema de cadastro e consulta de alunos de uma escola, podendo serem cadastrados todos os alunos que a escola possui para um controle da quantidade, da mensalidade que cada um paga - sendo indicado se o aluno paga a mensalidade normal ou com algum desconto e de diversas informações referente aos alunos.</p>
-            <p>Com esse controle de forma online, a escola pode melhor gerenciar seus recursos para melhor atender a todos os alunos.</p>
-        </div>
+      <h2>Home</h2>
+      <div class="conteudo-principal">
+        <p>
+          Esse site é um sistema de cadastro e consulta de alunos de uma escola,
+          podendo serem cadastrados todos os alunos que a escola possui para um
+          controle da quantidade, da mensalidade que cada um paga - sendo
+          indicado se o aluno paga a mensalidade normal ou com algum desconto e
+          de diversas informações referente aos alunos.
+        </p>
+        <p>
+          Com esse controle de forma online, a escola pode melhor gerenciar seus
+          recursos para melhor atender a todos os alunos.
+        </p>
+      </div>
     </div>
     <div id="novo-cadastro" class="conteudo-geral">
-        <h2>Cadastro de Novo Aluno</h2>
-        <form id="container-form-cadastro">
-            <div class="item-form">
-                <label for="matricula-aluno">Matricula do Aluno:</label>
-                <input id="matricula-aluno" type="number">
-            </div>
-            <div class="item-form">
-                <label for="nome-aluno">Nome do Aluno:</label>
-                <input id="nome-aluno" type="text">
-            </div>
-            <div class="item-form">
-                <label for="nasc-aluno">Data de Nascimento:</label>
-                <input id="nasc-aluno" type="date">
-            </div>
-            <div class="item-form">
-                <label for="ano-aluno">Ano Escolar:</label>
-                <select id="ano-aluno" name="ano-aluno">
-                    <option value="1º Fund">1º Fund</option>
-                    <option value="2º Fund">2º Fund</option>
-                    <option value="3º Fund">3º Fund</option>
-                    <option value="4º Fund">4º Fund</option>
-                    <option value="5º Fund">5º Fund</option>
-                    <option value="6º Fund">6º Fund</option>
-                    <option value="7º Fund">7º Fund</option>
-                    <option value="8º Fund">8º Fund</option>
-                    <option value="9º Fund">9º Fund</option>
-                    <option value="1º Med">1º Med</option>
-                    <option value="2º Med">2º Med</option>
-                    <option value="3º Med">3º Med</option>
-                </se.lect>
-            </div>
-            <div class="item-form">
-                <span>Aluno Possui Bolsa:</span>
-                <input id="bolsa-aluno-sim" type="radio" name="bolsa-aluno">
-                <label for="bolsa-aluno-sim">SIM</label>
-                <input id="bolsa-aluno-nao" type="radio" name="bolsa-aluno" checked>
-                <label for="bolsa-aluno-nao">NÃO</label>
-            </div>
+      <h2>Cadastro de Novo Aluno</h2>
+      <form id="container-form-cadastro">
+        <div class="item-form">
+          <label for="matricula-aluno">Matricula do Aluno:</label>
+          <input id="matricula-aluno" type="number" />
+        </div>
+        <div class="item-form">
+          <label for="nome-aluno">Nome do Aluno:</label>
+          <input id="nome-aluno" type="text" />
+        </div>
+        <div class="item-form">
+          <label for="nasc-aluno">Data de Nascimento:</label>
+          <input id="nasc-aluno" type="date" />
+        </div>
+        <div class="item-form">
+          <label for="ano-aluno">Ano Escolar:</label>
+          <select id="ano-aluno" name="ano-aluno">
+            <option value=""></option>
+            <option value="1º Fundamental">1º Fundamental</option>
+            <option value="2º Fundamental">2º Fundamental</option>
+            <option value="3º Fundamental">3º Fundamental</option>
+            <option value="4º Fundamental">4º Fundamental</option>
+            <option value="5º Fundamental">5º Fundamental</option>
+            <option value="6º Fundamental">6º Fundamental</option>
+            <option value="7º Fundamental">7º Fundamental</option>
+            <option value="8º Fundamental">8º Fundamental</option>
+            <option value="9º Fundamental">9º Fundamental</option>
+            <option value="1º Médio">1º Médio</option>
+            <option value="2º Médio">2º Médio</option>
+            <option value="3º Médio">3º Médio</option>
+          </select>
+        </div>
+        <div class="item-form">
+          <span>Aluno Possui Bolsa:</span>
+          <input id="bolsa-aluno-sim" type="radio" name="bolsa-aluno" />
+          <label for="bolsa-aluno-sim">SIM</label>
+          <input id="bolsa-aluno-nao" type="radio" name="bolsa-aluno" checked />
+          <label for="bolsa-aluno-nao">NÃO</label>
+        </div>
 
-            <input id="enviar-dados" type="button" value="CADASTRAR">
-
-            
-            
-        </form>
+        <input id="enviar-dados" type="button" value="CADASTRAR" />
+      </form>
     </div>
     <div id="lista-cadastro" class="conteudo-geral">
-        <h2>Alunos Cadastrados</h2>
-        <table id="container-table-view">
-            <thead>
-                <tr>
-                    <th>Matrícula</th>
-                    <th>Nome do Aluno</th>
-                    <th>Data de Nascimento</th>
-                    <th>Ano Escolar</th>
-                    <th>Possui Bolsa</th>
-                </tr>
-            </thead>
-            <tbody id="table-body-0"></tbody>
-            
-        </table>
+      <h2>Alunos Cadastrados</h2>
+      <table id="container-table-view">
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Nome do Aluno</th>
+            <th>Data de Nascimento</th>
+            <th>Ano Escolar</th>
+            <th>Possui Bolsa</th>
+          </tr>
+        </thead>
+        <tbody id="table-body-0"></tbody>
+      </table>
     </div>
-    
 
     <footer id="footer">
-        <spam>&#9825; &#169; Escola do Estudo e Apredizagem &#9825;</spam>
+      <spam>&#9825; &#169; Escola do Estudo e Apredizagem &#9825;</spam>
     </footer>
 
-   <script src="./js/javascript.js"></script>
+    <script src="./js/javascript.js"></script>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="/__/firebase/8.2.3/firebase-app.js"></script>
@@ -106,52 +111,71 @@
     <script src="/__/firebase/init.js"></script>
 
     <script>
-        var database = firebase.database();
+      var database = firebase.database();
 
-        var bodyTabela = document.getElementById('table-body-0')
-        var aluno = firebase.database().ref('/Pessoas/').once('value').then((snapshot)=> {
-            
-            snapshot.forEach((childSnapshot)=>{
-                var bolsaMensalidade
-                if (childSnapshot.val().bolsaMensalidade == "true"){
-                    bolsaMensalidade = 'SIM'
-                }
-                else{
-                    bolsaMensalidade = 'NÃO'
-                }
-    
-                var linhaTabela = document.createElement('tr');
-                linhaTabela.innerHTML = `
+      var bodyTabela = document.getElementById("table-body-0");
+      var aluno = firebase
+        .database()
+        .ref("/Pessoas/")
+        .once("value")
+        .then((snapshot) => {
+          snapshot.forEach((childSnapshot) => {
+            var bolsaMensalidade;
+            if (childSnapshot.val().bolsaMensalidade == true) {
+              bolsaMensalidade = "SIM";
+            } else {
+              bolsaMensalidade = "NÃO";
+            }
+
+            var linhaTabela = document.createElement("tr");
+            linhaTabela.innerHTML = `
                 <td>${childSnapshot.key}</td>
                 <td>${childSnapshot.val().nomeAluno}</td>
                 <td>${childSnapshot.val().nascimento}</td>
                 <td>${childSnapshot.val().anoEscolar}</td>
                 <td>${bolsaMensalidade}</td>
-                `
-                bodyTabela.appendChild(linhaTabela)
-            })
-            
+                `;
+            bodyTabela.appendChild(linhaTabela);
+          });
+        });
+
+      document.getElementById("enviar-dados").onclick = () => {
+        matricula = document.getElementById("matricula-aluno").value;
+        name = document.getElementById("nome-aluno").value;
+        date = document.getElementById("nasc-aluno").value;
+        year = document.getElementById("ano-aluno").value;
+        bolsa = document.getElementsByName("bolsa-aluno")[0].checked ? true : false;
+        if (matricula.length < 4) {
+          return alert("A matrícula deve ter pelo menos 4 números");
+        } else if (name.length < 3) {
+          return alert("Informe o nome do aluno - mínimo de 3 letras");
+        } else if (date.length == 0) {
+          return alert("Informe a data de nascimento do aluno");
+        } else if (year == "") {
+          return alert("Informe o Ano Escolar que o aluno frequenta");
+        }
+        firebase.database().ref("/Pessoas/").once("value").then((snapshot) => {
+            if (snapshot.child(matricula).exists()){
+                alert('Já existe um aluno com essa Matrícula')
+            }
+            else{
+                writeNewStudent(matricula, name, date, year, bolsa);
+            }
         })
+        
+      };
 
-
-        document.getElementById('enviar-dados').onclick = () => {
-            matricula = document.getElementById('matricula-aluno').value
-            name = document.getElementById('nome-aluno').value
-            date = document.getElementById('nasc-aluno').value
-            year = document.getElementById('ano-aluno').value
-            bolsa = false
-            writeNewStudent(matricula,name,date,year,bolsa)
-        }
-
-        function writeNewStudent(matricula,name,date,year,bolsa){
-            firebase.database().ref('Pessoas/'+matricula).set({
-                nomeAluno: name,
-                nascimento: date,
-                anoEscolar: year,
-                bolsaMensalidade: bolsa
-            });
-        }
-
+      function writeNewStudent(matricula, name, date, year, bolsa) {
+        firebase
+          .database()
+          .ref("Pessoas/" + matricula)
+          .set({
+            nomeAluno: name,
+            nascimento: date,
+            anoEscolar: year,
+            bolsaMensalidade: bolsa,
+          });
+      }
     </script>
-</body>
+  </body>
 </html>
